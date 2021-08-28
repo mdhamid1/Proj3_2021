@@ -14,10 +14,10 @@ class TestBarSearch(unittest.TestCase):
         results = process_command('bars cocoa bottom 10')
         self.assertEqual(results[0][0], 'Guadeloupe')
 
-        results = process_command('bars sell country=CA ratings top 5')
+        results = process_command('bars country=CA sell ratings top 5')
         self.assertEqual(results[0][3], 4.0)
 
-        results = process_command('bars source region=Africa ratings top 5')
+        results = process_command('bars region=Africa source ratings top 5')
         self.assertEqual(results[0][3], 4.0)
 
 
@@ -37,10 +37,10 @@ class TestCompanySearch(unittest.TestCase):
 class TestCountrySearch(unittest.TestCase):
 
     def test_country_search(self):
-        results = process_command('countries source ratings bottom 5')
+        results = process_command('countries ratings source bottom 5')
         self.assertEqual(results[1][0],'Uganda')
 
-        results = process_command('countries sell number_of_bars top 5')
+        results = process_command('countries number_of_bars sell top 5')
         self.assertEqual(results[0][2], 764)
         self.assertEqual(results[1][0], 'France')
 
